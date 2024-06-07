@@ -14,7 +14,7 @@ class ResultsScreen extends StatelessWidget {
 
   final void Function() restartQuiz;
 
-  List<Map<String, Object>> getSummaryData() {
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < chosenAnswers.length; i++) {
@@ -31,13 +31,30 @@ class ResultsScreen extends StatelessWidget {
     return summary;
   }
 
+  //   List<Map<String, Object>> getSummaryData() {
+  //   final List<Map<String, Object>> summary = [];
+
+  //   for (var i = 0; i < chosenAnswers.length; i++) {
+  //     summary.add({
+  //       'question_index': i,
+  //       'question': questions[i].text,
+  //       'correct_answer': questions[i].answers[0],
+  //       'user_answer': chosenAnswers[i],
+  //       'is_correct':
+  //           questions[i].answers[0] == chosenAnswers[i]
+  //     });
+  //   }
+
+  //   return summary;
+  // }
+
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
+    // final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
-    final numCorrectQuestions = summaryData.where((data) {
-      return data['correct_answer'] == data['user_answer'];
-    }).length;
+    final numCorrectQuestions = summaryData.where((data) => 
+       data['correct_answer'] == data['user_answer']
+    ).length;
 
     return SizedBox(
       width: double.infinity,
@@ -57,7 +74,7 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(height: 30),
             QuestionsSummary(summaryData),
             const SizedBox(
-              width: 30,
+              width: 80,
             ),
             TextButton.icon(
               onPressed: restartQuiz,
