@@ -13,6 +13,8 @@ class QuestionsScreen extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _QuestionsScreenState();
   }
+
+  getSummaryData() {}
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
