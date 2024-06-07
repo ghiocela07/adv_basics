@@ -37,7 +37,7 @@ class QuestionsSummary extends StatelessWidget {
                       textAlign: TextAlign.center,
                       ((data['question_index'] as int) + 1).toString(),
                       style: GoogleFonts.lato(
-                        color: const Color.fromARGB(255, 243, 218, 247),
+                        color: const Color.fromARGB(255, 7, 7, 7),
                         fontSize: 14
                       ),
                     ),
